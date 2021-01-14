@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     private int swingRight = 1;				// Go left or right (1 = right, -1 = left)
  
     private LineRenderer line;              // Line Renderer
+    public Material lineRendererMat;        //Line Renderer Material
     private Rigidbody2D rigidbody;			// Orb Rigidbody
     public ParticleSystem explosionPS;		// Death explostion partical system
     public ParticleSystem trailPS;			// Trail particle system
@@ -45,8 +46,11 @@ public class PlayerController : MonoBehaviour
         line.SetVertexCount(2);
 
         //Set line color
-        line.material.color = new Color(100f, 2.5f, 0f);
-     }
+        Color c = new Color(PlayerPrefs.GetFloat("red"), PlayerPrefs.GetFloat("green"), PlayerPrefs.GetFloat("blue"));
+        lineRendererMat.color = c;
+        lineRendererMat.SetColor("_EmissionColor", c);
+        line.material = lineRendererMat;
+    }
      
      // Update is called once per frame
      void Update () {
@@ -64,7 +68,7 @@ public class PlayerController : MonoBehaviour
      		gameObject2 = gameLogic.planetCollection[currentPlanet];
 
  			Vector3 targ = gameObject2.transform.position;
-	        targ.z = 0f;
+            targ.z = -200f;
 
 	        targ.x = targ.x - transform.position.x;
 	        targ.y = targ.y - transform.position.y;
@@ -93,10 +97,12 @@ public class PlayerController : MonoBehaviour
 	        {
 
 	        	line.SetVertexCount(2);
-	            // Update position of the two vertex of the Line Renderer
-	            line.SetPosition(0, gameObject1.transform.position);
-	            line.SetPosition(1, gameObject2.transform.position);
-	            line.sortingOrder = 2;
+                // Update position of the two vertex of the Line Renderer
+                Vector3 pos1 = gameObject1.transform.position;
+                Vector3 pos2 = gameObject2.transform.position;
+	            line.SetPosition(0, pos1);
+	            line.SetPosition(1, pos2);
+	            line.sortingOrder = 4;
 
 	            Quaternion q = Quaternion.AngleAxis (speed/(lineDistance(gameObject1, gameObject2)), swingRight * transform.forward);
 				rigidbody.MovePosition (q * (rigidbody.transform.position - gameObject2.transform.position) + gameObject2.transform.position);
@@ -120,9 +126,9 @@ public class PlayerController : MonoBehaviour
 	     	//Constantly move up
 	     	//rigidbody.velocity = new Vector2(0, speed);
 	     	float dirFacing = (transform.rotation.z * 100)+90;//*((float)Math.PI/180f));
-	     	Debug.Log("dirFacing: " + dirFacing);
+	     	
 	     	Vector2 newDirection = new Vector2((float)Math.Cos((Math.PI / 180) * dirFacing), (float)Math.Sin((Math.PI / 180) * dirFacing));
-	     	Debug.Log("newDirection: " + newDirection);
+	     	
 	     	rigidbody.velocity = newDirection * speed;
      	}
 

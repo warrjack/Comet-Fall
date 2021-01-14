@@ -24,26 +24,26 @@ public class ButtonHandler : MonoBehaviour
 
     	if(PlayButton)
     	{
-	        // fades the image out when you click
-	        fadeHandler.fadeToNewScene(fadeImg, false, "GamePlay", 1f);
-
+            // fades the image out when you click
+            fadeHandler.fadeToNewScene(fadeImg, false, "GamePlay");
     	}
 
     	else if (SettingsButton)
     	{
-    		//Show Customizer and reset button
+            //Show Customizer and reset button
+            fadeHandler.fadeToNewScene(fadeImg, false, "Settings");
     	}
 
     	else if(RestartButton)
     	{
 	        // fades the image out when you click
-	        fadeHandler.fadeToNewScene(fadeImg, false, "GamePlay", 1f);
+	        fadeHandler.fadeToNewScene(fadeImg, false, "GamePlay");
     	}
 
     	else if (MenuButton)
     	{
     		//Show Customizer and reset button
-	        fadeHandler.fadeToNewScene(fadeImg, false, "Main Menu", 1f);
+	        fadeHandler.fadeToNewScene(fadeImg, false, "Main Menu");
     	}
     }    
 }

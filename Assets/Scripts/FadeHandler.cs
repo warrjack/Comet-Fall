@@ -7,13 +7,15 @@ using UnityEngine.SceneManagement;
 public class FadeHandler : MonoBehaviour
 {
 
-	public void fadeToNewScene(Image fadeImage, bool isFading, string nameOfScene, float speedOfFade)
+    public float speed = 1.5f;
+
+	public void fadeToNewScene(Image fadeImage, bool isFading, string nameOfScene)
 	{
-	    StartCoroutine(FadeImage(fadeImage, isFading, nameOfScene, speedOfFade));
+	    StartCoroutine(FadeImage(fadeImage, isFading, nameOfScene));
 	}
 
 
-    IEnumerator FadeImage(Image img, bool fadeAway, string sceneName, float speed)
+    IEnumerator FadeImage(Image img, bool fadeAway, string sceneName)
     {
         // fade from opaque to transparent
         if (fadeAway)
