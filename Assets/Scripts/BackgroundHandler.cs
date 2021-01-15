@@ -30,9 +30,9 @@ public class BackgroundHandler : MonoBehaviour
     	if (inGame)
     	{
      		gameLogic = gl.GetComponent<GameLogic>();
-    	}
+            fadeHandler.fadeToNewScene(fadeImg, true, "");
+        }
 
-	    fadeHandler.fadeToNewScene(fadeImg, true, "");
 
     	//Get starting point of player
     	startingPoint = player.transform.position;

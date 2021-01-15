@@ -604,7 +604,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Main Menu
+  m_Text: 
 --- !u!222 &283419898
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -668,7 +668,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &439841996
 RectTransform:
   m_ObjectHideFlags: 0
@@ -6153,7 +6153,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Play Again
+  m_Text: 
 --- !u!222 &1079091847
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6266,8 +6266,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 4c80ab1170b6e462fa00f28fe2a890a9, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -11451,6 +11451,10 @@ MonoBehaviour:
   - {fileID: 8592332705232956132, guid: dcab2374e0773a54e9a9ed093fe29b92, type: 3}
   - {fileID: 4743666610313812476, guid: 911dc42ec6c137a488d0b6d6f1f5303d, type: 3}
   - {fileID: 8703683014553337979, guid: 42ad345607f167d41893d513bf4a2f4c, type: 3}
+  - {fileID: 4745516504547278590, guid: 54cc4ddd6f525442caafcccc08231655, type: 3}
+  - {fileID: 4506934010399384421, guid: ca79e533c6f2241cf8f551580badb5cc, type: 3}
+  - {fileID: 2839428349130470482, guid: c84b5d15a441d4ae8a450cf8d379d3fb, type: 3}
+  - {fileID: 8179382695369855139, guid: 26aa1602d20704e7cbc1bfa1892a28eb, type: 3}
   planetCollection: []
   player: {fileID: 2028456470}
 --- !u!4 &1640823447
@@ -11958,8 +11962,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 20690f4706477437bb861b7deebab0b6, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
